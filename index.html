@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Generate truth tables quickly and accurately with our intuitive and user-friendly Truth Table Generator tool. Simplify complex logic expressions, visualize logical relationships, and streamline decision-making processes effortlessly. Our free online Truth Table Generator is perfect for students, educators, and professionals in computer science, mathematics, and engineering fields. With our versatile tool, you can simplify Boolean expressions, optimize logical operations, and improve your understanding of logic circuits and digital systems. Try it now to enhance your learning experience and excel in your studies or projects. Supports various syntax formats including standard notation, logical operators, and Boolean algebra expressions."
+    />
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/d/d0/Square_00-01-15-14---11-06-08-05---12-13-03-02---07-10-04-09.svg"
+      type="image/x-icon"
+    />
+    <title>Truth Table Generator</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Page Title -->
+      <h1 class="display-6 text-center fw-bold mt-2">
+        <code>Truth Table Generator</code>
+      </h1>
+
+      <!-- Rules -->
+      <div class="rulesSet" id="rules">
+        <ul class="list-group list-group-flush">
+          <!-- List of rules -->
+          <li class="list-group-item">01. Valid Expression Only !</li>
+          <li class="list-group-item">02. Use And, Or, Not Gates Only</li>
+          <li class="list-group-item">
+            03. Demo: <b>SOP:-- </b>AB'+B'A, <b>POS:-- </b>(a+b+c)(a'+b'+d')
+          </li>
+          <li class="list-group-item">04. Case Insensitive</li>
+        </ul>
+      </div>
+
+      <!-- Input Area -->
+      <div id="typeInput" class="text-center">
+        <!-- Radio buttons for selecting input type -->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="sop"
+          />
+          <label class="form-check-label" for="inlineRadio1">SOP</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="pos"
+            checked
+          />
+          <label class="form-check-label" for="inlineRadio2">POS</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="mixed"
+            disabled
+          />
+          <label class="form-check-label" for="inlineRadio3">Mixed</label>
+        </div>
+      </div>
+
+      <!-- Input Expression -->
+      <div
+        class="row text-center justify-content-center align-items-center g-2"
+      >
+        <div class="col-lg-9 col-sm-12">
+          <div class="inputArea">
+            <!-- Input text field -->
+            <input
+              type="text"
+              class="form-control mt-3 border border-dark-subtle rounded-5 border-5 py-2"
+              placeholder="Enter Valid Logic Expression..."
+              id="inputExpression"
+            />
+          </div>
+        </div>
+        <!-- Generate Button -->
+        <div class="col-lg-3 col-sm-12">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            onclick="calculateAndPopulateTable()"
+            data-bs-theme="dark"
+          >
+            Generate Table
+          </button>
+        </div>
+      </div>
+
+      <!-- Output Area -->
+      <div
+        class="row text-center justify-content-center align-items-center g-2 mt-2"
+      >
+        <div class="col-lg-12 col-sm-12">
+          <div id="outputArea">
+            <!-- Truth table will be displayed here -->
+            <table
+              class="table table-success table-striped table-hover table-responsive table-bordered border border-dark-subtle rounded-5 border-5 py-2"
+              id="truthTable"
+            ></table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="./calculateAndPopulateTable.js"></script>
+    <!-- Include Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
